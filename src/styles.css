@@ -30,6 +30,11 @@ p {
   color: chocolate;
 }
 
+small {
+  text-align: center;
+  display: block;
+}
+
 .container {
   text-align: center;
   margin: auto;
@@ -87,7 +92,7 @@ p {
   display: inline;
   left: -0px;
   top: -00px;
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
   height: 38px;
   border: 1px solid;
   border-color: rgba(2, 70, 70, 0.5);
@@ -95,7 +100,7 @@ p {
   background-color: aliceblue;
 }
 
-.current-location-button{
+.current-location-button {
   display: inline;
   height: 38px;
   border: 1px solid;
