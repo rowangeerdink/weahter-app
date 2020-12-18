@@ -39,16 +39,15 @@
           </div>
         </div>
         <div class="col-12 col-md-8">
+        <form class="search-city" id="search-city-form">
           <div class="row">
             <div class="col-12 col-md-8 offset-md-2">
-              <form class="search-city" id="search-city-form">
                 <input
                   type="search"
                   placeholder="Search City"
                   class="form-control"
                   id="search-text-input"
                 />
-              </form>
             </div>
 
             <div class="col-4 col-md-8 offset-md-4">
@@ -60,6 +59,7 @@
               />
               <div class="col-6 col-md-8 offset-md-4">
                 <button
+                  type="button"
                   class="current-location-button"
                   id="current-location-button"
                 >
@@ -67,6 +67,7 @@
                 </button>
               </div>
             </div>
+</form>
 
             <div class="col-12 col-md-8 offset-md-2">
               <div class="favorite-cities">
@@ -122,13 +123,6 @@
         </div>
       </div>
     </div>
-
-    <small>
-      <a href="https://github.com/rowangeerdink/weahter-app" target="blank">
-        Open source code
-      </a>
-      by Rowan Geerdink</small
-    >
 
     <script src="src/script.js"></script>
   </body>
