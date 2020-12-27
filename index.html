@@ -24,7 +24,7 @@
   <body>
     <div class="container weather-app">
       <div class="row">
-        <div class="col-12 col-md-4">
+        <div class="col-6 col-md-4">
           <div class="today">
             <h1 id="city">Haarlem</h1>
             <p class="date-time-today" id="date-time">dateTime</p>
@@ -38,35 +38,40 @@
             </p>
           </div>
         </div>
-        <div class="col-12 col-md-8">
+        <div class="col-6 col-md-8">
         <form class="search-city" id="search-city-form">
           <div class="row">
-            <div class="col-12 col-md-8 offset-md-2">
+           <div class="col-12 col-md-8 offset-md-2">
                 <input
                   type="search"
                   placeholder="Search City"
                   class="form-control"
                   id="search-text-input"
+                  autocomplete="off"
                 />
             </div>
-
-            <div class="col-4 col-md-8 offset-md-4">
+          
+            <div class="row">
+            <div class="col-3 col-md-8 offset-md-4" id="button-row">
               <input
                 type="submit"
-                value="Search City"
+                value="Search"
                 class="search-button"
                 id="search-button"
               />
-              <div class="col-6 col-md-8 offset-md-4">
+
+              <div class="col-3 col-md-8 offset-md-4">
                 <button
+                value="My Location"
                   type="button"
                   class="current-location-button"
                   id="current-location-button"
                 >
-                  Current Location
+                 Current Location
                 </button>
               </div>
             </div>
+          </div>
 </form>
 
             <div class="col-12 col-md-8 offset-md-2">

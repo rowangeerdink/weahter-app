@@ -5,6 +5,8 @@ body {
 
 h1 {
   text-align: center;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 h3 {
@@ -58,6 +60,12 @@ small {
   border-color: rgba(2, 70, 70, 0.5);
   border-radius: 4px;
   margin-top: 15px;
+  width: fit-content;
+}
+
+.date-time-today {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .weather-image-today {
@@ -88,11 +96,16 @@ small {
   background-color: aliceblue;
 }
 
+.button-row {
+  display: inline;
+  margin: 0 auto;
+}
+
 .search-button {
   display: inline;
-  left: -0px;
-  top: -00px;
-  margin-bottom: 15px;
+  position: relative;
+  left: 8px;
+  margin: 10px 0px 15px auto;
   height: 38px;
   border: 1px solid;
   border-color: rgba(2, 70, 70, 0.5);
@@ -102,12 +115,17 @@ small {
 
 .current-location-button {
   display: inline;
+  position: relative;
+  top: -63px;
+  left: 28px;
   height: 38px;
   border: 1px solid;
+  margin: 10px 0px 15px auto;
   margin-bottom: 15px;
   border-color: rgba(2, 70, 70, 0.5);
   border-radius: 4px;
   background-color: aliceblue;
+  width: max-content;
 }
 
 .favorite-cities {
