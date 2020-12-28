@@ -96,11 +96,6 @@ small {
   background-color: aliceblue;
 }
 
-.button-row {
-  display: inline;
-  margin: 0 auto;
-}
-
 .search-button {
   display: inline;
   position: relative;
