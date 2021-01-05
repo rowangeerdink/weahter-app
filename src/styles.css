@@ -166,3 +166,16 @@ small {
   margin-top: 30px;
   margin-bottom: 15px;
 }
+
+#celcius {
+  font-size: xx-large;
+}
+
+#min-temp {
+  font-weight: 100;
+  font-size: small;
+}
+
+#forecast-image {
+  margin-left: -5px;
+}

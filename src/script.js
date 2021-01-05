@@ -49,11 +49,51 @@ function displayWeatherCondition(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
+function formatHours(timestamp) {
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${hours}:${minutes}`;
+}
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast-row");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 5; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+ <div class="col-12 col-md mb-3 mb-md-0">
+          <div class="day" id="forecast">
+            <h5>${formatHours(forecast.dt * 1000)}</h5>
+            <span id=forecast-image><img src ="https://openweathermap.org/img/wn/${
+              forecast.weather[0].icon
+            }@2x.png"></img></span>
+            <p>${Math.round(
+              forecast.main.temp_max
+            )}/<span id=min-temp>${Math.round(
+      forecast.main.temp_min
+    )}</span>°C</p>
+          </div>
+        </div>`;
+  }
+}
+
 function searchCity(city) {
   let apiKey = "12087b5c6e656cb621cae20a854dfb64";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeatherCondition);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function handleSubmit(event) {
@@ -67,6 +107,9 @@ function searcLocation(position) {
   let apiKey = "12087b5c6e656cb621cae20a854dfb64";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayWeatherCondition);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&exclude=hourly&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function getCurrentLocation(event) {
