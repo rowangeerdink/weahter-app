@@ -25,6 +25,9 @@ h5 {
 }
 
 ul {
+  list-style: none;
+  padding: 0px;
+  margin-left: 0px;
   text-align: left;
   font-size: 18px;
 }
@@ -63,9 +66,9 @@ small {
 .today {
   display: block;
   text-align: center;
-  color: white;
+  color: rgb(217, 237, 255);
   border-radius: 4px;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-left: 20px;
   width: fit-content;
   position: relative;
@@ -109,6 +112,7 @@ small {
 .search-button {
   display: inline;
   position: relative;
+  color: rgb(87, 31, 43);
   padding: 0px 10px 0px 10px;
   margin: 10px 0px 15px auto;
   height: 38px;
@@ -123,6 +127,7 @@ small {
 .current-location-button {
   display: inline;
   position: relative;
+  color: rgb(87, 31, 43);
   top: -63px;
   left: 46px;
   height: 38px;
@@ -136,10 +141,20 @@ small {
   width: max-content;
 }
 
+.description {
+  margin-left: 55px;
+  color: rgb(217, 237, 255);
+  font-weight: 100;
+}
+
+.description ::first-letter {
+  text-transform: capitalize;
+}
+
 .day {
   display: block;
   text-align: center;
-  color: white;
+  color: rgb(87, 31, 43);
   border: 1px solid;
   border-color: rgb(87, 31, 43);
   border-radius: 4px;

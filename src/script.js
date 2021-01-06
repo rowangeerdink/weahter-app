@@ -14,33 +14,49 @@ if (minutes < 10) {
 }
 let time = hours + ":" + minutes;
 
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 let day = days[now.getDay()];
 
 let months = [
-  "Jan",
-  "Feb",
-  "Mar",
-  "Apr",
+  "Januari",
+  "Februari",
+  "March",
+  "April",
   "May",
-  "Jun",
-  "Jul",
-  "Aug",
-  "Sep",
-  "Oct",
-  "Nov",
-  "Dec",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
 ];
 let month = months[now.getMonth()];
 
 let dateTimeToday = document.querySelector("#date-time");
-dateTimeToday.innerHTML = `${day} ${month} ${date} ${time}`;
+dateTimeToday.innerHTML = ` Last updated on <br />  ${day} ${month} ${date} <br />${time}`;
 
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].description;
+  document.querySelector("#feels-like").innerHTML = `Feels like: ${Math.round(
+    response.data.main.feels_like
+  )} °C`;
+  document.querySelector("#windspeed").innerHTML = `Windspeed: ${Math.round(
+    response.data.wind.speed
+  )} Km/H`;
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
@@ -66,6 +82,8 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast-row");
   forecastElement.innerHTML = null;
   let forecast = null;
+
+  console.log(response);
 
   for (let index = 0; index < 5; index++) {
     forecast = response.data.list[index];
