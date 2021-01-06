@@ -43,9 +43,10 @@ img {
 small {
   text-align: center;
   display: block;
+  font-weight: 100;
 }
 
-.container {
+.weather-container {
   display: block;
   text-align: center;
   margin: auto;
